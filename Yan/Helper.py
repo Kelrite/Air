@@ -28,3 +28,16 @@ def jarly(jasplit):
   result =  [int(ja) for ja in result]
   result = collections.Counter(result)
   return result
+
+def janit(uplist):
+  if not uplist:
+    return []
+  total = 0
+  for t in range(len(uplist) - 1):
+    i = int(uplist[t].split(":")[1])
+    j = int(uplist[t + 1].split(":")[1])
+    if j < i:
+      j += 60
+    total += j - i
+  rata = round(total / len(uplist), 3)
+  return rata
