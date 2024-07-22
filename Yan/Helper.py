@@ -1,3 +1,5 @@
+import collections
+
 repl = "\r\n"; split = repl + repl
 
 def ansplit(uplist):
@@ -19,3 +21,10 @@ zele = {
   "Pahala":"Pahala Kencana"
 }
 
+def jarly(jasplit):
+  if not jasplit:
+    return []
+  result = [ja.split(":")[0] for ja in jasplit]
+  result =  [int(ja) for ja in result]
+  result = collections.Counter(result)
+  return result
