@@ -2,6 +2,12 @@ import collections
 
 repl = "\r\n"; split = repl + repl
 
+ontrue = ~False
+
+urutan = lambda sample :  dict(sorted(sample.items(), key=lambda item: item[1], reverse=ontrue))
+
+limite = lambda sample, i : dict(list(sample.items())[:i])
+
 def ansplit(uplist):
   if not uplist:
     return []
