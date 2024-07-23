@@ -27,6 +27,10 @@ zele = {
   "Pahala":"Pahala Kencana"
 }
 
+def replator(uplist):
+  uplist = [zele[i] if i in zele else i for i in uplist]
+  return uplist
+
 def jarly(jasplit):
   if not jasplit:
     return []
