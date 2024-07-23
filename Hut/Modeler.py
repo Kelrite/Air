@@ -22,23 +22,23 @@ class Helper(Model):
 from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 
 class Hantu(Model):
-  def __init__(self, outlen):
+  def __init__(self):
     super(Hantu, self).__init__()
-    self.imasatu = Conv2D(16, 3, activation="relu")
-    self.imanida = Conv2D(32, 3, activation="relu")
-    self.imatiga = Conv2D(64, 3, activation="relu")
+    self.imasatu = Conv2D(32, 3, activation="relu")
+    self.imanida = Conv2D(64, 3, activation="relu")
+    self.imatiga = Conv2D(128, 3, activation="relu")
     self.pooling = MaxPool2D((2, 2))
-    self.dropout = Dropout(0.2)
+    self.dropout = Dropout(0.3)
     self.flatten = Flatten()
-    self.denseri = Dense(64, activation="relu")
-    self.classes = Dense(outlen, activation="softmax")
+    self.denseri = Dense(512, activation="relu")
+    self.classes = Dense(3, activation="softmax")
 
   def call(self, i):
     x = self.pooling(self.imasatu(i))
     x = self.pooling(self.imanida(x))
     x = self.pooling(self.imatiga(x))
-    x = self.dropout(x)
-    x = self.flatten(x)
+    x = self.pooling(self.imatiga(x))
+    x = self.dropout(self.flatten(x))
     x = self.denseri(x)
     j = self.classes(x)
     return j
