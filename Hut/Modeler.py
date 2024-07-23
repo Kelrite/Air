@@ -28,9 +28,8 @@ class Hantu(Model):
     self.imanida = Conv2D(32, 3, activation="relu")
     self.imatiga = Conv2D(64, 3, activation="relu")
     self.pooling = MaxPool2D((2, 2))
-
-    self.flatten = Flatten()
     self.dropout = Dropout(0.2)
+    self.flatten = Flatten()
     self.denseri = Dense(64, activation="relu")
     self.classes = Dense(outlen, activation="softmax")
 
@@ -38,8 +37,8 @@ class Hantu(Model):
     x = self.pooling(self.imasatu(i))
     x = self.pooling(self.imanida(x))
     x = self.pooling(self.imatiga(x))
-    x = self.flatten(x)
     x = self.dropout(x)
+    x = self.flatten(x)
     x = self.denseri(x)
     j = self.classes(x)
     return j
