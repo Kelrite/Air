@@ -30,7 +30,7 @@ class Hantu(Model):
     self.pooling = MaxPool2D((2, 2))
 
     self.flatten = Flatten()
-    self.dropout = Dropout(0.2)
+    self.dropout = Dropout(0.25)
     self.denseri = Dense(128, activation="relu")
     self.classes = Dense(outlen, activation="softmax")
 
