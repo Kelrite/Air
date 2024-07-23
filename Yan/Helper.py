@@ -49,5 +49,5 @@ def janit(uplist):
     if j < i:
       j += 60
     total += j - i
-  rata = round(total / len(uplist), 1)
+  rata = int(total / len(uplist))
   return rata
