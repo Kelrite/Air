@@ -37,7 +37,6 @@ class Hantu(Model):
     x = self.pooling(self.imasatu(i))
     x = self.pooling(self.imanida(x))
     x = self.pooling(self.imatiga(x))
-    x = self.pooling(self.imatiga(x))
     x = self.dropout(self.flatten(x))
     x = self.denseri(x)
     j = self.classes(x)
