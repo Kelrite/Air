@@ -9,7 +9,7 @@ class Helper(Model):
     super(Helper, self).__init__()
     self.flip_left_right = RandomFlip()
     self.random_rotation = RandomRotation(0.4)
-    self.random_translation = RandomTranslation(0.4, 0.4)
+    self.random_translation = RandomTranslation(0.2, 0.2)
     self.random_size = RandomZoom(0.4)
   
   def call(self, i):
@@ -30,8 +30,8 @@ class Hantu(Model):
     self.pooling = MaxPool2D((2, 2))
 
     self.flatten = Flatten()
-    self.dropout = Dropout(0.25)
-    self.denseri = Dense(128, activation="relu")
+    self.dropout = Dropout(0.2)
+    self.denseri = Dense(64, activation="relu")
     self.classes = Dense(outlen, activation="softmax")
 
   def call(self, i):
