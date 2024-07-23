@@ -51,3 +51,13 @@ def janit(uplist):
     total += j - i
   rata = int(total / len(uplist))
   return rata
+
+def imsplit(uplist, l, split):
+  fail = []
+  for i in range(len(uplist)):
+    if len(uplist[i]) != l:
+      key = i
+      fail = uplist[i].split(split)
+      fail.remove("")
+  uplist = uplist[:key] + fail + uplist[key+1:]
+  return uplist
