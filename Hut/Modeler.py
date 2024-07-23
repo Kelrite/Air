@@ -24,9 +24,9 @@ from tensorflow.keras.layers import Conv2D, MaxPool2D, Flatten, Dense, Dropout
 class Hantu(Model):
   def __init__(self, outlen):
     super(Hantu, self).__init__()
-    self.imasatu = Conv2D(16, 3, activation="relu", padding="same")
-    self.imanida = Conv2D(32, 3, activation="relu", padding="same")
-    self.imatiga = Conv2D(64, 3, activation="relu", padding="same")
+    self.imasatu = Conv2D(16, 3, activation="relu")
+    self.imanida = Conv2D(32, 3, activation="relu")
+    self.imatiga = Conv2D(64, 3, activation="relu")
     self.pooling = MaxPool2D((2, 2))
 
     self.flatten = Flatten()
