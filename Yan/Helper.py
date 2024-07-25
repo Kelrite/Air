@@ -21,10 +21,10 @@ def titler(uplist):
   return uplist
 
 zele = {
-  "Jasa":"Jasa Utama", 
-  "Mayasari":"Mayasari Bakti", 
-  "Steady":"Steady Safe", 
-  "Pahala":"Pahala Kencana"
+  "Jasa":"Jasa Utama", "Agung":"Agung Bhakti"
+  "Mayasari":"Mayasari Bakti", "Steady":"Steady Safe", 
+  "Pahala":"Pahala Kencana", "Megah":"Megah Langgeng",
+  "Sinar":"Sinar Jaya ML"
 }
 
 def replator(uplist):
