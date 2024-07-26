@@ -31,6 +31,14 @@ def replator(uplist):
   uplist = [zele[i] if i in zele else i for i in uplist]
   return uplist
 
+def motol(sanlist):
+  if not sanlist:
+    return ([], 0)
+  mota = utili.ansplit(sanlist)
+  moti = utili.replator(utili.titler(mota))
+  singleti = {moti[i]: len(mota[i].split(",")) for i in range(len(moti))}
+  return list(singleti.keys()), sum(singleti.values())
+
 def jarly(jasplit):
   if not jasplit:
     return []
