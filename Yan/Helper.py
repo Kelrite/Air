@@ -34,8 +34,8 @@ def replator(uplist):
 def motol(sanlist):
   if not sanlist:
     return ([], 0)
-  mota = utili.ansplit(sanlist)
-  moti = utili.replator(utili.titler(mota))
+  mota = ansplit(sanlist)
+  moti = replator(titler(mota))
   singleti = {moti[i]: len(mota[i].split(",")) for i in range(len(moti))}
   return list(singleti.keys()), sum(singleti.values())
 
