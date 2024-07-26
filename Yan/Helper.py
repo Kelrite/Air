@@ -8,6 +8,8 @@ urutan = lambda sample :  dict(sorted(sample.items(), key=lambda item: item[1], 
 
 limite = lambda sample, i : dict(list(sample.items())[:i])
 
+faili = lambda uplist : [] if not uplist else uplist
+
 def ansplit(uplist):
   if not uplist:
     return []
@@ -38,6 +40,12 @@ def motol(sanlist):
   moti = replator(titler(mota))
   singleti = {moti[i]: len(mota[i].split(",")) for i in range(len(moti))}
   return list(singleti.keys()), sum(singleti.values())
+
+def jalister(uplist):
+  if not uplist:
+    return []
+  uplist = [ja.strip() for ja in uplist.split(",")]
+  return uplist
 
 def jarly(jasplit):
   if not jasplit:
